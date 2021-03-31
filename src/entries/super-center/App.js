@@ -9,9 +9,22 @@ import CategoryList from "./CategoryList";
 import CategoryAttributesEdit from "./CategoryAttributesEdit";
 import AttributeList from "./AttributeList";
 import AttributeEdit from "./AttributeEdit";
+import WeixinClientList from "./WeixinClientList";
 
 
 const menus = [
+    {
+        title: "客户端管理",
+        icon: <UserOutlined />,
+        items: [
+            {
+                title: "微信客服端管理",
+                link: "/weixin_clients",
+                key: "weixin_clients",
+            }
+        ]
+    },
+
     {
         title: "类目",
         icon: <UserOutlined />,
@@ -38,6 +51,13 @@ const routes = [
         exact: true,
         component: <div>未实现</div>,
     },
+    {
+        path: "/weixin_clients",
+        breadcrumb: ["客服端管理", "微信客户端"],
+        component: <WeixinClientList/>,
+        menu: "weixin_clients"
+    },
+
     {
         path: "/categories",
         breadcrumb: ["类目", "类目管理"],

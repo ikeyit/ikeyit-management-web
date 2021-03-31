@@ -1,4 +1,4 @@
-import {productUrl, tradeUrl} from "./apiConfig";
+import {passportUrl, productUrl, tradeUrl} from "./apiConfig";
 import {callApi, callGet, callPost, callPut, callDelete} from "./callApi";
 
 /**以下为业务API**/
@@ -61,6 +61,9 @@ export const
     getMedias = callGet(`${productUrl}/seller/medias`),
     prepareUploadImage = callGet(`${productUrl}/prepare_upload/image`),
 
+
+    //平台管理
+    //类目管理
     getCategories = callGet(`${productUrl}/categories`),
     getCategoryAttributes = callGet(`${productUrl}/category/{id}/attributes`),
     getCategoryAttributeValues = callGet(`${productUrl}/category/{id}/attribute_values`),
@@ -76,7 +79,14 @@ export const
     getAttribute = callGet(`${productUrl}/attribute/{id}`),
     obsoleteAttribute = callDelete(`${productUrl}/attribute/{id}`),
     createAttribute = callPost(`${productUrl}/attribute`),
-    updateAttribute = callPut(`${productUrl}/attribute/{attributeId}`)
+    updateAttribute = callPut(`${productUrl}/attribute/{attributeId}`),
+
+    //微信客户端管理
+    getWeixinClients = callGet(`${passportUrl}/weixin_clients`),
+    createWeixinClient = callPost(`${passportUrl}/weixin_client`),
+    updateWeixinClient = callPut(`${passportUrl}/weixin_client/{appId}`),
+    deleteWeixinClient = callDelete(`${passportUrl}/weixin_client/{appId}`)
+
 ;
 
 

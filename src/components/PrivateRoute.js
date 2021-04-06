@@ -11,7 +11,7 @@ export default function PrivateRoute({children, authorities, ...rest}) {
         window.location = '/login.html?from=' + encodeURIComponent(window.location.href);
         return null;
     }
-    if (authorities instanceof Array ? hasAnyAuthority(...authorities) : hasAuthority(authorities))
+    if (authorities === undefined || (authorities instanceof Array ? hasAnyAuthority(...authorities) : hasAuthority(authorities)))
         return <Route {...rest}>{children}</Route>;
 
     // return <Redirect to={{pathname:'/login', state:{from: location, errMsg: "呔，何方妖孽！不要捣乱！"}}}/>;

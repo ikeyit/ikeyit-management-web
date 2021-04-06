@@ -217,7 +217,7 @@ const routes = [
 export default function App() {
     return (
         <Router>
-            <PrivateRoute path="/" authorities="ROLE_SELLER">
+            <PrivateRoute path="/" authorities="r_seller">
                 <BasicLayout menus={menus} openMenus={openMenus} routes={routes} header={<AppHeader/>}/>
             </PrivateRoute>
         </Router>

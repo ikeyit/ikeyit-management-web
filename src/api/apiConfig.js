@@ -1,9 +1,9 @@
-export let passportUrl = "http://passport-service.ikeyit:9000";
-export let userUrl = "http://passport-service.ikeyit:9000";
-export let messageCenterUrl = "http://passport-service.ikeyit:9000";
-export let messageCenterWSUrl = "ws://passport-service.ikeyit:9000";
-export let productUrl = "http://product-service.ikeyit:9001";
-export let tradeUrl = "http://trade-service.ikeyit:9002";
+export let passportUrl = "http://localhost:9000";
+export let userUrl = "http://localhost:9000";
+export let messageCenterUrl = "http://localhost:9000";
+export let messageCenterWSUrl = "ws://localhost:9000";
+export let productUrl = "http://localhost.ikeyit:9001";
+export let tradeUrl = "http://localhost.ikeyit:9002";
 
 let env = process.env.NODE_ENV
 console.info(`current env: ${env}`);

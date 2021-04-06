@@ -75,11 +75,9 @@ export default function MessageBox() {
     return (
         <>
             {notificationHolder}
-            <a onClick={openMessageBox}>
-                <Badge count={messageStats.totalMessageCount}>
-                    <NotificationFilled style={{ fontSize: '16px', color: '#fff' }}/>
-                </Badge>
-            </a>
+            <Badge count={messageStats.totalMessageCount} onClick={openMessageBox} className="msg-badge">
+                <NotificationFilled style={{ fontSize: '16px', color: '#fff' }}/>
+            </Badge>
             <Drawer onClose={closeMessageBox} onClick={onDrawerClick} visible={messageBoxVisible} width={640}>
                 <Tabs activeKey={activeType} onChange={type=>setActiveType(type)}>
                     {messageStats.items.map(item =>

@@ -1,12 +1,14 @@
 #  IKEYIT 后台管理系统
-基于React开封SPA，工程分为多个入口。
+基于React多SPA项目，工程分为多个入口。代码全面拥抱hooks，和函数式组件。几乎没有用任何类组件！代码更加简洁。
 后端微服务工程：https://github.com/ikeyit/ikeyit-services
 
 ## 技术栈
-Javascript
+Javascript  
 React
-Ant Design
-Webpack
+React-Router  
+React Hooks   
+Ant Design  
+Webpack  
 
 ## 跑起来
 

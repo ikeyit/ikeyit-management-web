@@ -15,7 +15,7 @@ export function SessionContextProvider({children}) {
             auth,
             login: authManager.login,
             logout: authManager.logout,
-            authenticated: authManager.authenticated,
+            authenticated: authManager.authenticated(),
             hasAuthority: authManager.hasAuthority,
             hasAnyAuthority: authManager.hasAuthority}}>
             {children}

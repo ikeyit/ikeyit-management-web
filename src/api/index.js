@@ -82,10 +82,22 @@ export const
     updateAttribute = callPut(`${productUrl}/attribute/{attributeId}`),
 
     //微信客户端管理
-    getWeixinClients = callGet(`${passportUrl}/weixin_clients`),
-    createWeixinClient = callPost(`${passportUrl}/weixin_client`),
-    updateWeixinClient = callPut(`${passportUrl}/weixin_client/{appId}`),
-    deleteWeixinClient = callDelete(`${passportUrl}/weixin_client/{appId}`)
+    getWeixinClients = callGet(`${passportUrl}/super/weixin_clients`),
+    createWeixinClient = callPost(`${passportUrl}/super/weixin_client`),
+    updateWeixinClient = callPut(`${passportUrl}/super/weixin_client/{appId}`),
+    deleteWeixinClient = callDelete(`${passportUrl}/super/weixin_client/{appId}`),
+
+    getUsers = callGet(`${passportUrl}/super/users`),
+    setUsersEnabled = callPut(`${passportUrl}/super/users/enabled`),
+
+    sendUpdateEmailVerificationOld = callPost(`${passportUrl}/old_email/verification`),
+    validateUpdateEmailVerificationOld = callPost(`${passportUrl}/old_email/verification/validate`),
+    sendEmailVerification = callPost(`${passportUrl}/email/verification`),
+    updateEmail = callPost(`${passportUrl}/email`),
+
+    getUserDetail = callGet(`${passportUrl}/user`),
+    updatePassword = callPost(`${passportUrl}/password`);
+
 
 ;
 

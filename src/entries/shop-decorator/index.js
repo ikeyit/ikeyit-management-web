@@ -14,7 +14,7 @@ ReactDOM.render(
         {/*<React.StrictMode>*/}
         <DndProvider backend={HTML5Backend}>
         <Router>
-            <PrivateRoute path="/" authorities="ROLE_SELLER">
+            <PrivateRoute path="/" authorities="r_seller">
                 <Switch>
                     <Route path="/edit/:pageId">
                         <PageEdit/>

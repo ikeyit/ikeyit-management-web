@@ -10,7 +10,7 @@ import CategoryAttributesEdit from "./CategoryAttributesEdit";
 import AttributeList from "./AttributeList";
 import AttributeEdit from "./AttributeEdit";
 import WeixinClientList from "./WeixinClientList";
-
+import UserList from "./UserList";
 
 const menus = [
     {
@@ -24,7 +24,17 @@ const menus = [
             }
         ]
     },
-
+    {
+        title: "用户管理",
+        icon: <UserOutlined />,
+        items: [
+            {
+                title: "查找用户",
+                link: "/users",
+                key: "user",
+            }
+        ]
+    },
     {
         title: "类目",
         icon: <UserOutlined />,
@@ -57,7 +67,12 @@ const routes = [
         component: <WeixinClientList/>,
         menu: "weixin_clients"
     },
-
+    {
+        path: "/users",
+        breadcrumb: ["用户管理", "查找用户"],
+        component: <UserList/>,
+        menu: "users"
+    },
     {
         path: "/categories",
         breadcrumb: ["类目", "类目管理"],
@@ -88,7 +103,7 @@ const routes = [
 export default function App() {
     return (
         <Router>
-            <PrivateRoute path="/" authorities="ROLE_SELLER">
+            <PrivateRoute path="/" authorities="r_super">
                 <BasicLayout menus={menus} openMenus={openMenus} routes={routes} header={<AppHeader/>}/>
             </PrivateRoute>
         </Router>

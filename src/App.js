@@ -12,10 +12,17 @@ export default function App() {
                     <div className="site-slogan">
                         IKEYIT，一个开源的电商平台系统，支持多店铺。
                     </div>
+                    <div className="site-github">
+                        <a href="https://github.com/ikeyit/ikeyit-services" target="_blank">
+                            <img src="https://img.shields.io/github/stars/ikeyit/ikeyit-services.svg?style=social&label=Stars"/>
+                            <img src="https://img.shields.io/github/forks/ikeyit/ikeyit-services.svg?style=social&label=Fork"/>
+                        </a>
+                    </div>
                     <div className="demo">
                         <div className="demo-title">演示系统</div>
                         <a href="/seller-center.html" className="demo-entry ripple">卖家管理中心</a>
                         <a href="/super-center.html" className="demo-entry ripple">平台管理中心</a>
+                        <div className="demo-tip">加微信：wodead，索要测试账号</div>
                     </div>
 
                 </div>
@@ -24,7 +31,7 @@ export default function App() {
                 <div className="feature">
                     <h3>IKEYIT的起源？</h3>
                     <p>
-                        这个说来话长，起初它只是一家码农开办的内衣品牌(BRAGOOD)的自研网店和社区系统。经过微服务化改造后开源给大家。
+                        这个说来话长，IKEYIT前身为布谷商城和社区。经过微服务化改造后开源给大家。
                     </p>
                 </div>
                 <div className="feature">
@@ -39,7 +46,7 @@ export default function App() {
                 <div className="feature">
                     <h3>IKEYIT能给你带来什么好处？</h3>
                     <p>
-                        1.中小企业可以直接用来假设自己的私有网店系统。<br/>
+                        1.中小企业可以直接用来架设自己的私有网店系统。<br/>
                         2.学习SpringBoot开发微服务的参考。IKEYIT代码上尽量减少依赖，避免学习成本过高。<br/>
                         3.项目结构尽可能清晰，方便在此基础上做调优，适配第三方。<br/>
                     </p>
@@ -47,7 +54,7 @@ export default function App() {
                 <div className="feature">
                     <h3>如何支持IKEYIT？</h3>
                     <p>
-                        方式一，淘宝搜索bragood、布谷春天、翁黛舒给自己的女友，老婆，女伴，或者自己购买一套内衣。<br/>
+                        方式一，关注IKEYIT github<br/>
                         方式二，加微信号wodead，畅谈人生，钻研技术或金钱支持。<br/>
                     </p>
                 </div>

@@ -87,18 +87,19 @@ export const
     updateWeixinClient = callPut(`${passportUrl}/super/weixin_client/{appId}`),
     deleteWeixinClient = callDelete(`${passportUrl}/super/weixin_client/{appId}`),
 
+    //平台管理用户
     getUsers = callGet(`${passportUrl}/super/users`),
     setUsersEnabled = callPut(`${passportUrl}/super/users/enabled`),
 
-    sendUpdateEmailVerificationOld = callPost(`${passportUrl}/old_email/verification`),
-    validateUpdateEmailVerificationOld = callPost(`${passportUrl}/old_email/verification/validate`),
-    sendEmailVerification = callPost(`${passportUrl}/email/verification`),
-    updateEmail = callPost(`${passportUrl}/email`),
-
-    getUserDetail = callGet(`${passportUrl}/user`),
-    updatePassword = callPost(`${passportUrl}/password`);
-
-
+    //账户中心
+    getUser = callGet(`${passportUrl}/account/user`),
+    sendVerificationCodeForCheckSecurity = callPost(`${passportUrl}/account/security_check/verification/{way}`),
+    checkSecurity = callPost(`${passportUrl}/account/security_check`),
+    sendVerificationCodeForUpdateEmail = callPost(`${passportUrl}/account/email/verification`),
+    updateEmail = callPost(`${passportUrl}/account/email`),
+    updatePassword = callPost(`${passportUrl}/account/password`),
+    sendVerificationCodeForUpdateMobile = callPost(`${passportUrl}/account/mobile/verification`),
+    updateMobile = callPost(`${passportUrl}/account/mobile`)
 ;
 
 

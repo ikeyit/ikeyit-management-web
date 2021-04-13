@@ -115,6 +115,11 @@ export const authManager = {
                 authManager.decode(res);
                 return res;
             }, error => {
+                if (error.response) {
+                    error = error.response.data;
+                } else {
+                    error = {errCode: 'NETWORK_ERROR', errMsg: '网络错误'};
+                }
                 authManager.setAuth({
                     ...authManager.auth,
                     status:"error",

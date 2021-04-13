@@ -15,19 +15,19 @@ export default function EmailSetting({currentEmail, ...props}) {
     const [countdown2, setCountdown2] = useState(false);
 
     const onSendCode1 = ()=> {
-        api.sendUpdateEmailVerificationOld()
+        api.sendVerificationCodeForCheckSecurity({way:"email"})
             .then(res => setCountdown1(true))
             .catch(error => message.error(error.errMsg));
     };
 
     const onSendCode2 = ()=> {
-        api.sendEmailVerification({email: form2.getFieldValue("email")})
+        api.sendVerificationCodeForUpdateEmail({email: form2.getFieldValue("email")})
             .then(res => setCountdown2(true))
             .catch(error => message.error(error.errMsg));
     };
 
     const onFinish1 = (values)=> {
-        api.validateUpdateEmailVerificationOld(values)
+        api.checkSecurity({way:"email", ...values})
             .then(res => setCurrent(1))
             .catch(error => message.error(error.errMsg));
     };

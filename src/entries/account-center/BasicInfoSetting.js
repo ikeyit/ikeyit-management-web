@@ -8,7 +8,7 @@ import EmailSetting from "./EmailSetting";
 import PasswordSetting from "./PasswordSetting";
 
 export default function BasicInfoSetting() {
-    const loadTask = useAsyncTask(api.getUserDetail);
+    const loadTask = useAsyncTask(api.getUser);
     useEffect(loadTask.execute,[]);
     const emailSettingTrigger = useModalTrigger(loadTask.execute);
     const mobileSettingTrigger = useModalTrigger(loadTask.execute);

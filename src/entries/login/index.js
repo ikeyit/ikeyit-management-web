@@ -10,8 +10,14 @@ ReactDOM.render(
                 <img src="logo-header.png"/>
             </div>
             <div className="login-bd">
-                {/*<div className="login-ad">*/}
-                {/*</div>*/}
+                <div className="login-ad">
+                    <div className="ad-title">一站式电商SaaS平台</div>
+                    <div className="ad-features">
+                        <div className="ad-feature">独立站</div>
+                        <div className="ad-feature">一企多店</div>
+                        <div className="ad-feature">多渠道互通</div>
+                    </div>
+                </div>
                 <LoginForm/>
             </div>
         </div>

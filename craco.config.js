@@ -1,6 +1,5 @@
 const path = require('path');
 const fs = require('fs');
-const CracoLessPlugin = require('craco-less');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const InlineChunkHtmlPlugin = require('react-dev-utils/InlineChunkHtmlPlugin');
 const { getThemeVariables } = require('antd/dist/theme');
@@ -75,6 +74,35 @@ function configureWebpack(webpackConfig, {env, paths}) {
     const inlineChunkHtmlPluginIndex = webpackConfig.plugins.findIndex(plugin => plugin instanceof InlineChunkHtmlPlugin);
     if (inlineChunkHtmlPluginIndex >= 0)
         webpackConfig.plugins.slice(inlineChunkHtmlPluginIndex, 1);
+    //找到oneof rules
+    const oneOfRule = webpackConfig.module.rules.find(rule => rule.oneOf);
+    const sassRuleIndex = oneOfRule.oneOf.findIndex(
+        rule => rule.test && rule.test.toString().includes("scss|sass")
+    );
+    const lessUse = [...oneOfRule.oneOf[sassRuleIndex].use];
+    lessUse[lessUse.length - 1] = {
+        loader: require.resolve("less-loader"),
+        options: {
+            lessOptions: {
+                sourceMap: isEnvDevelopment,
+                modifyVars: {
+                    ...getThemeVariables({
+                        compact: false,
+                    }),
+                    'primary-color': '#fa8c16',
+                    'link-color': '#fa8c16',
+                    'layout-header-background': '#fa8c16',
+                    'border-radius-base': '2px',
+                },
+                javascriptEnabled: true,
+            },
+        }
+    };
+    oneOfRule.oneOf.splice(sassRuleIndex, 0, {
+        exclude: /\.module\.(less)$/,
+        test:  /\.less$/,
+        use: lessUse
+    });
     return webpackConfig;
 }
 
@@ -95,26 +123,25 @@ module.exports = {
     webpack: {
         configure: configureWebpack,
     },
-
-    plugins: [
-        {
-            plugin: CracoLessPlugin,
-            options: {
-                lessLoaderOptions: {
-                    lessOptions: {
-                        modifyVars: {
-                            ...getThemeVariables({
-                                compact: false,
-                            }),
-                            'primary-color': '#fa8c16',
-                            'link-color': '#fa8c16',
-                            'layout-header-background': '#fa8c16',
-                            'border-radius-base': '2px',
-                        },
-                        javascriptEnabled: true,
-                    },
-                },
-            },
-        },
-    ],
+    // plugins: [
+    //     {
+    //         plugin: CracoLessPlugin,
+    //         options: {
+    //             lessLoaderOptions: {
+    //                 lessOptions: {
+    //                     modifyVars: {
+    //                         ...getThemeVariables({
+    //                             compact: false,
+    //                         }),
+    //                         'primary-color': '#fa8c16',
+    //                         'link-color': '#fa8c16',
+    //                         'layout-header-background': '#fa8c16',
+    //                         'border-radius-base': '2px',
+    //                     },
+    //                     javascriptEnabled: true,
+    //                 },
+    //             },
+    //         },
+    //     },
+    // ],
 };

@@ -11,6 +11,7 @@ import AttributeList from "./AttributeList";
 import AttributeEdit from "./AttributeEdit";
 import WeixinClientList from "./WeixinClientList";
 import UserList from "./UserList";
+import ProductScoreEdit from "./ProductScoreEdit";
 
 const menus = [
     {
@@ -40,7 +41,7 @@ const menus = [
         icon: <UserOutlined />,
         items: [
             {
-                title: "分类管理",
+                title: "类目管理",
                 link: "/categories",
                 key: "categories",
             },
@@ -51,7 +52,17 @@ const menus = [
             }
         ]
     },
-
+    {
+        title: "商品管理",
+        icon: <UserOutlined />,
+        items: [
+            {
+                title: "权重管理",
+                link: "/product_score",
+                key: "product_score",
+            }
+        ]
+    },
 ]
 const openMenus = menus.map((item, index) => index.toString());
 
@@ -61,6 +72,7 @@ const routes = [
         exact: true,
         component: <div>未实现</div>,
     },
+
     {
         path: "/weixin_clients",
         breadcrumb: ["客服端管理", "微信客户端"],
@@ -96,6 +108,13 @@ const routes = [
         exact: true,
         breadcrumb: ["类目", "参数管理"],
         component: <AttributeEdit/>,
+        menu: "attributes"
+    },
+    {
+        path: "/product_score",
+        exact: true,
+        breadcrumb: ["商品管理", "权重"],
+        component: <ProductScoreEdit/>,
         menu: "attributes"
     },
 ];

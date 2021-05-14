@@ -10,7 +10,7 @@ export default function App() {
                 <div className="site-title">
                    <img src="logo-header.png"/>
                     <div className="site-slogan">
-                        IKEYIT，一个开源的电商平台系统，支持多店铺。
+                        "HELLO WORLD" IKEYIT，一个开源的电商平台系统，支持多店铺。
                     </div>
                     <div className="site-github">
                         <a href="https://github.com/ikeyit/ikeyit-services" target="_blank">
@@ -20,8 +20,8 @@ export default function App() {
                     </div>
                     <div className="demo">
                         <div className="demo-title">演示系统</div>
-                        <a href="/seller-center.html" className="demo-entry ripple">卖家管理中心</a>
-                        <a href="/super-center.html" className="demo-entry ripple">平台管理中心</a>
+                        <a href="seller-center.html" className="demo-entry ripple">卖家管理中心</a>
+                        <a href="super-center.html" className="demo-entry ripple">平台管理中心</a>
                         <div className="demo-tip">加微信：wodead，索要测试账号</div>
                     </div>
 

@@ -90,6 +90,7 @@ export const
     //平台管理用户
     getUsers = callGet(`${passportUrl}/super/users`),
     setUsersEnabled = callPut(`${passportUrl}/super/users/enabled`),
+    updateProductScore = callPut(`${productUrl}/super/product/score`),
 
     //账户中心
     getUser = callGet(`${passportUrl}/account/user`),

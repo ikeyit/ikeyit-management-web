@@ -54,6 +54,7 @@
     "glob": "^7.1.6",
     "react-scripts": "^4.0.3",
     "source-map-explorer": "^2.5.2",
+    "less": "^3.13.1",
     "less-loader": "^7.3.0"
   }
 }

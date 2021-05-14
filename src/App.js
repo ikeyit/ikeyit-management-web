@@ -10,7 +10,7 @@ export default function App() {
                 <div className="site-title">
                    <img src="logo-header.png"/>
                     <div className="site-slogan">
-                        "HELLO WORLD" IKEYIT，一个开源的电商平台系统，支持多店铺。
+                        IKEYIT 0.1.0，一个开源的电商平台系统，支持多店铺。
                     </div>
                     <div className="site-github">
                         <a href="https://github.com/ikeyit/ikeyit-services" target="_blank">
